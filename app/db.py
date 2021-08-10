@@ -14,7 +14,7 @@ def get_db():
             database=current_app.config['DATABASE']
         )
         g.c = g.db.cursor(dictionary=True)
-    return g.db, gc
+    return g.db, g.c
 
 def close_db(e=None):
     db = g.pop('db',None)
@@ -38,4 +38,4 @@ def init_db_command():
 
 def init_app(app):
     app.teardown_appcontext(close_db)
-    app.cli.add_command()
+    app.cli.add_command(init_db_command)
