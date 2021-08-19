@@ -1,13 +1,18 @@
 {% extends 'base.html' %}
 
-{% block header%}
+{% block header %}
 <h1 >{% block title %} Correos Enviados {% endblock %}</h1>
+{% endblock %}
+
+{% block action %}
+<a class="button" href="#"> Nuevo Correo</a>
+
 {% endblock %}
 
 {% block content %}
 <ul>
     {% for mail in mails%}
-    <li class="mail">
+    <li class="mail-list">
         <div>
             <span class="email">{{mail['email']}}</span>
             <span class="subject">{{mail['subject']}}</span>

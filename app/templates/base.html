@@ -16,10 +16,11 @@
 
   <nav>Mail<b>Hub</b></nav>
   <section class="content">
-    <div class="class='top-bar">
+    <div class="top-bar">
       <form method="GET">
         <input name="search" type="text" placeholder="Buscar" />
       </form>
+      {% block action %} {% endblock %}
     </div>
 
     <header>
